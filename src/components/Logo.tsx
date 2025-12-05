@@ -1,4 +1,4 @@
-import { Route } from "lucide-react";
+import { Compass } from "lucide-react";
 
 interface LogoProps {
   className?: string;
@@ -7,24 +7,18 @@ interface LogoProps {
 
 export const Logo = ({ className, size = "md" }: LogoProps) => {
   const sizes = {
-    sm: "h-8",
-    md: "h-10",
-    lg: "h-14",
-  };
-
-  const textSizes = {
-    sm: "text-xl",
-    md: "text-2xl",
-    lg: "text-3xl",
+    sm: { icon: "w-5 h-5", text: "text-lg" },
+    md: { icon: "w-6 h-6", text: "text-xl" },
+    lg: { icon: "w-8 h-8", text: "text-2xl" },
   };
 
   return (
     <div className={`flex items-center gap-2 ${className}`}>
-      <div className="gradient-primary p-2 rounded-xl shadow-md">
-        <Route className={`${sizes[size]} w-auto text-primary-foreground`} />
+      <div className="p-1.5 rounded-lg bg-primary/10">
+        <Compass className={`${sizes[size].icon} text-primary`} />
       </div>
-      <span className={`${textSizes[size]} font-bold text-foreground`}>
-        Next<span className="text-gradient">Path</span>
+      <span className={`font-serif ${sizes[size].text} text-foreground`}>
+        NextPath
       </span>
     </div>
   );

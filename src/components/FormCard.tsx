@@ -12,14 +12,14 @@ export const FormCard = ({ children, className, title, description }: FormCardPr
   return (
     <div
       className={cn(
-        "bg-card rounded-2xl p-8 shadow-card border border-border/50 animate-scale-in",
+        "bg-card rounded-2xl p-8 shadow-card border border-border animate-scale-in",
         className
       )}
     >
       {(title || description) && (
         <div className="mb-6">
           {title && (
-            <h2 className="text-2xl font-bold text-foreground mb-2">{title}</h2>
+            <h2 className="text-2xl font-serif text-foreground mb-2">{title}</h2>
           )}
           {description && (
             <p className="text-muted-foreground">{description}</p>

@@ -186,12 +186,12 @@ const Onboarding = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
-        <div className="container mx-auto px-4 py-4">
+      <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/50">
+        <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Logo size="sm" />
             {!showRoadmap && (
-              <div className="hidden md:block text-sm text-muted-foreground">
+              <div className="text-sm text-muted-foreground">
                 Шаг {currentStep + 1} из {steps.length}
               </div>
             )}
@@ -199,33 +199,33 @@ const Onboarding = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 max-w-3xl">
+      <main className="container mx-auto px-6 py-12 max-w-2xl">
         {!showRoadmap ? (
           <>
             {/* Step indicator */}
-            <div className="mb-8">
+            <div className="mb-10">
               <StepIndicator steps={steps} currentStep={currentStep} />
             </div>
 
             {/* Form content */}
-            <div className="mb-8">{renderStep()}</div>
+            <div className="mb-10">{renderStep()}</div>
 
             {/* Navigation buttons */}
             <div className="flex items-center justify-between">
               <Button variant="ghost" onClick={handleBack}>
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeft className="w-4 h-4" />
                 Назад
               </Button>
               <Button variant="hero" onClick={handleNext}>
                 {currentStep === steps.length - 1 ? (
                   <>
-                    <Sparkles className="w-4 h-4 mr-2" />
+                    <Sparkles className="w-4 h-4" />
                     Создать карту
                   </>
                 ) : (
                   <>
                     Далее
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="w-4 h-4" />
                   </>
                 )}
               </Button>
@@ -240,9 +240,9 @@ const Onboarding = () => {
                 timeline: formData.timeline,
               }}
             />
-            <div className="mt-8 text-center">
+            <div className="mt-10 text-center">
               <Button variant="ghost" onClick={handleBack}>
-                <ArrowLeft className="w-4 h-4 mr-2" />
+                <ArrowLeft className="w-4 h-4" />
                 Вернуться к редактированию
               </Button>
             </div>
