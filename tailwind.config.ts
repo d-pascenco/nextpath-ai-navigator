@@ -4,6 +4,14 @@ export default {
   darkMode: ["class"],
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
   prefix: "",
+  safelist: [
+    'bg-coral', 'bg-coral-light', 'text-coral', 'border-coral/30',
+    'bg-teal', 'bg-teal-light', 'text-teal', 'border-teal/30',
+    'bg-amber', 'bg-amber-light', 'text-amber', 'border-amber/30',
+    'bg-violet', 'bg-violet-light', 'text-violet', 'border-violet/30',
+    'bg-sage', 'text-sage',
+    'text-coral/20', 'text-coral/30', 'text-amber/20', 'text-amber/30', 'text-teal/20', 'text-teal/30',
+  ],
   theme: {
     container: {
       center: true,
@@ -61,6 +69,22 @@ export default {
         },
         sand: "hsl(var(--sand))",
         cream: "hsl(var(--cream))",
+        coral: {
+          DEFAULT: "hsl(var(--coral))",
+          light: "hsl(var(--coral-light))",
+        },
+        teal: {
+          DEFAULT: "hsl(var(--teal))",
+          light: "hsl(var(--teal-light))",
+        },
+        amber: {
+          DEFAULT: "hsl(var(--amber))",
+          light: "hsl(var(--amber-light))",
+        },
+        violet: {
+          DEFAULT: "hsl(var(--violet))",
+          light: "hsl(var(--violet-light))",
+        },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

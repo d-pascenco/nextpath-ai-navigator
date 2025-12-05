@@ -45,10 +45,22 @@
     --cream: 40 30% 96%;
     --warm-brown: 30 25% 25%;
 
+    /* Bright accents */
+    --coral: 12 85% 62%;
+    --coral-light: 12 85% 95%;
+    --teal: 175 70% 42%;
+    --teal-light: 175 50% 92%;
+    --amber: 38 95% 55%;
+    --amber-light: 38 90% 92%;
+    --violet: 270 65% 58%;
+    --violet-light: 270 50% 95%;
+
     /* Gradients */
     --gradient-warm: linear-gradient(180deg, hsl(35 30% 96%) 0%, hsl(40 25% 94%) 100%);
     --gradient-terracotta: linear-gradient(135deg, hsl(18 65% 55%), hsl(25 70% 50%));
     --gradient-sage: linear-gradient(135deg, hsl(155 35% 42%), hsl(160 40% 45%));
+    --gradient-coral: linear-gradient(135deg, hsl(12 85% 62%), hsl(25 90% 58%));
+    --gradient-vibrant: linear-gradient(135deg, hsl(12 85% 62%), hsl(38 95% 55%), hsl(175 70% 42%));
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(30 10% 15% / 0.03);
@@ -147,10 +159,33 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(18 65% 55%), hsl(155 35% 42%));
+    background: linear-gradient(135deg, hsl(12 85% 62%), hsl(38 95% 55%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .text-gradient-vibrant {
+    background: linear-gradient(135deg, hsl(12 85% 62%), hsl(175 70% 42%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-coral {
+    background: var(--gradient-coral);
+  }
+
+  .gradient-vibrant {
+    background: var(--gradient-vibrant);
+  }
+
+  .glow-coral {
+    box-shadow: 0 0 40px hsl(12 85% 62% / 0.3);
+  }
+
+  .glow-amber {
+    box-shadow: 0 0 40px hsl(38 95% 55% / 0.3);
   }
 
   .animate-float {
