@@ -15,18 +15,18 @@ export const StepIndicator = ({ steps, currentStep }: StepIndicatorProps) => {
             <div className="flex flex-col items-center">
               <div
                 className={cn(
-                  "w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold transition-all duration-300",
+                  "w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all duration-300",
                   index < currentStep
-                    ? "gradient-primary text-primary-foreground shadow-md"
+                    ? "bg-primary text-primary-foreground"
                     : index === currentStep
-                    ? "gradient-accent text-accent-foreground shadow-lg shadow-glow"
-                    : "bg-muted text-muted-foreground"
+                    ? "bg-foreground text-background"
+                    : "bg-secondary text-muted-foreground"
                 )}
               >
                 {index < currentStep ? (
-                  <Check className="w-5 h-5" />
+                  <Check className="w-4 h-4" />
                 ) : (
-                  index + 1
+                  <span className="font-serif">{index + 1}</span>
                 )}
               </div>
               <span
@@ -41,8 +41,8 @@ export const StepIndicator = ({ steps, currentStep }: StepIndicatorProps) => {
             {index < steps.length - 1 && (
               <div
                 className={cn(
-                  "flex-1 h-1 mx-2 rounded-full transition-all duration-500",
-                  index < currentStep ? "gradient-primary" : "bg-muted"
+                  "flex-1 h-0.5 mx-3 rounded-full transition-all duration-500",
+                  index < currentStep ? "bg-primary" : "bg-border"
                 )}
               />
             )}
