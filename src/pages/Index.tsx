@@ -218,9 +218,9 @@ const Index = () => {
             ].map((item, idx) => (
               <div key={idx} className="relative group">
                 <div className={`text-8xl font-serif leading-none mb-4 transition-all duration-300 ${
-                  item.accent === 'primary' ? 'text-primary/20 group-hover:text-primary/40' :
-                  item.accent === 'sage' ? 'text-sage/20 group-hover:text-sage/40' :
-                  'text-golden/20 group-hover:text-golden/40'
+                  item.accent === 'primary' ? 'text-primary/40 group-hover:text-primary/60' :
+                  item.accent === 'sage' ? 'text-sage/40 group-hover:text-sage/60' :
+                  'text-golden/40 group-hover:text-golden/60'
                 }`}>
                   {item.step}
                 </div>
