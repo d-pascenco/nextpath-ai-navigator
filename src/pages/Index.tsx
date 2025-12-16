@@ -233,30 +233,31 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 relative">
-        
-        <div className="container mx-auto relative">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage/10 border border-sage/20 text-sm mb-8">
-              <Zap className="w-4 h-4 text-sage" />
-              <span className="text-foreground">Начните сегодня — это бесплатно</span>
+      <section className="py-24 px-6">
+        <div className="container mx-auto">
+          <div className="bg-primary/10 rounded-3xl p-10 md:p-16">
+            <div className="max-w-3xl mx-auto text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage/10 border border-sage/20 text-sm mb-8">
+                <Zap className="w-4 h-4 text-sage" />
+                <span className="text-foreground">Начните сегодня — это бесплатно</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">
+                Готовы <span className="text-terracotta-vibrant">начать</span>?
+              </h2>
+              <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
+                Создайте персональную дорожную карту и сделайте первый шаг к карьере мечты
+              </p>
+              <Button 
+                variant="hero" 
+                size="xl"
+                onClick={() => navigate("/onboarding")}
+                className="group shadow-accent hover:shadow-glow transition-all duration-300"
+              >
+                Создать дорожную карту
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
             </div>
-            
-            <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">
-              Готовы <span className="text-terracotta-vibrant">начать</span>?
-            </h2>
-            <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
-              Создайте персональную дорожную карту и сделайте первый шаг к карьере мечты
-            </p>
-            <Button 
-              variant="hero" 
-              size="xl"
-              onClick={() => navigate("/onboarding")}
-              className="group shadow-accent hover:shadow-glow transition-all duration-300"
-            >
-              Создать дорожную карту
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
           </div>
         </div>
       </section>
