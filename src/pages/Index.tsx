@@ -114,19 +114,21 @@ const Index = () => {
       </section>
 
       {/* Capabilities list */}
-      <section className="py-16 px-6 border-t border-border/50 bg-sand/40">
+      <section className="py-16 px-6 border-t border-border/50">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
-            {capabilities.map((item, idx) => (
-              <div 
-                key={idx} 
-                className="flex items-center gap-3 text-sm text-foreground/80 hover:text-primary transition-colors group"
-                style={{ animationDelay: `${idx * 100}ms` }}
-              >
-                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-sage shrink-0 group-hover:scale-125 transition-transform" />
-                {item}
-              </div>
-            ))}
+          <div className="bg-sand/40 rounded-2xl p-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+              {capabilities.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className="flex items-center gap-3 text-sm text-foreground/80 hover:text-primary transition-colors group"
+                  style={{ animationDelay: `${idx * 100}ms` }}
+                >
+                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-sage shrink-0 group-hover:scale-125 transition-transform" />
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -179,13 +181,14 @@ const Index = () => {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="py-24 px-6 bg-sand/40 relative">
+      <section id="how-it-works" className="py-24 px-6 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-2xl" />
           <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-sage/10 rounded-full blur-2xl" />
         </div>
         
         <div className="container mx-auto relative">
+          <div className="bg-sand/40 rounded-3xl p-10 md:p-16">
           <div className="max-w-2xl mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">
               Как это <span className="text-terracotta-vibrant">работает</span>
@@ -228,6 +231,7 @@ const Index = () => {
                 </p>
               </div>
             ))}
+          </div>
           </div>
         </div>
       </section>
