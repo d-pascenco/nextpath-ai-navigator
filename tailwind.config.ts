@@ -54,13 +54,17 @@ export default {
         terracotta: {
           DEFAULT: "hsl(var(--terracotta))",
           light: "hsl(var(--terracotta-light))",
+          vibrant: "hsl(var(--terracotta-vibrant))",
         },
         sage: {
           DEFAULT: "hsl(var(--sage))",
           light: "hsl(var(--sage-light))",
+          vibrant: "hsl(var(--sage-vibrant))",
         },
         sand: "hsl(var(--sand))",
         cream: "hsl(var(--cream))",
+        golden: "hsl(var(--golden))",
+        coral: "hsl(var(--coral))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
