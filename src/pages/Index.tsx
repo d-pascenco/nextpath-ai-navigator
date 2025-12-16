@@ -7,17 +7,14 @@ const features = [
   {
     title: "Анализ навыков",
     description: "AI определяет ваши сильные стороны и точки роста на основе опыта и образования",
-    color: "coral",
   },
   {
     title: "Персональный маршрут",
     description: "Пошаговый план с курсами, практикой и реалистичными сроками",
-    color: "teal",
   },
   {
     title: "Динамическая адаптация",
     description: "План корректируется по мере вашего прогресса и изменения приоритетов",
-    color: "amber",
   },
 ];
 
@@ -58,14 +55,14 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6">
         <div className="container mx-auto">
           <div className="max-w-3xl animate-slide-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-coral-light text-coral text-sm font-medium mb-8 border border-coral/20">
-              <Sparkles className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm mb-8">
+              <Sparkles className="w-3.5 h-3.5 text-primary" />
               AI-платформа для карьеры
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6">
               Найди свой<br />
-              <span className="text-gradient">путь к мечте</span>
+              <span className="text-primary">путь к мечте</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
@@ -95,18 +92,15 @@ const Index = () => {
       <section className="py-16 px-6 border-t border-border/50">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {capabilities.map((item, idx) => {
-              const colors = ['coral', 'teal', 'amber', 'violet', 'sage'];
-              return (
-                <div 
-                  key={idx} 
-                  className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <div className={`w-2 h-2 rounded-full bg-${colors[idx % colors.length]} shrink-0`} />
-                  {item}
-                </div>
-              );
-            })}
+            {capabilities.map((item, idx) => (
+              <div 
+                key={idx} 
+                className="flex items-center gap-3 text-sm text-muted-foreground"
+              >
+                <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -127,10 +121,10 @@ const Index = () => {
             {features.map((feature, idx) => (
               <div
                 key={idx}
-                className={`p-8 rounded-2xl bg-card border border-border hover:border-${feature.color}/30 hover:shadow-lg transition-all duration-300 group`}
+                className="p-8 rounded-2xl bg-card border border-border hover:border-primary/20 transition-colors duration-300"
               >
-                <div className={`w-12 h-12 rounded-xl bg-${feature.color}-light flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                  <span className={`text-lg font-serif text-${feature.color}`}>0{idx + 1}</span>
+                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
+                  <span className="text-lg font-serif text-primary">0{idx + 1}</span>
                 </div>
                 <h3 className="text-xl font-serif text-foreground mb-3">
                   {feature.title}
@@ -162,23 +156,20 @@ const Index = () => {
                 step: "01",
                 title: "Расскажите о себе",
                 description: "Заполните профиль: образование, опыт, навыки и карьерные цели",
-                color: "coral",
               },
               {
                 step: "02",
                 title: "AI создаёт план",
                 description: "Алгоритм анализирует данные и строит оптимальный маршрут развития",
-                color: "amber",
               },
               {
                 step: "03",
                 title: "Следуйте карте",
                 description: "Изучайте материалы, выполняйте задания и отслеживайте прогресс",
-                color: "teal",
               },
             ].map((item, idx) => (
-              <div key={idx} className="relative group">
-                <div className={`text-8xl font-serif text-${item.color}/20 leading-none mb-4 group-hover:text-${item.color}/30 transition-colors`}>
+              <div key={idx} className="relative">
+                <div className="text-8xl font-serif text-primary/10 leading-none mb-4">
                   {item.step}
                 </div>
                 <h3 className="text-2xl font-serif text-foreground mb-3">
