@@ -75,7 +75,7 @@ const Index = () => {
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6">
               Найди свой<br />
-              <span className="text-gradient">путь к мечте</span>
+              <span className="text-terracotta-vibrant">путь к мечте</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
@@ -136,7 +136,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-2xl mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">
-              Всё для <span className="text-gradient">карьерного роста</span>
+              Всё для <span className="text-terracotta-vibrant">карьерного роста</span>
             </h2>
             <p className="text-muted-foreground text-lg">
               NextPath использует AI для создания вашего уникального плана развития
@@ -188,7 +188,7 @@ const Index = () => {
         <div className="container mx-auto relative">
           <div className="max-w-2xl mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">
-              Как это <span className="text-gradient-accent">работает</span>
+              Как это <span className="text-terracotta-vibrant">работает</span>
             </h2>
             <p className="text-muted-foreground text-lg">
               Три простых шага к персональной дорожной карте
@@ -248,7 +248,7 @@ const Index = () => {
             </div>
             
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">
-              Готовы <span className="text-gradient">начать</span>?
+              Готовы <span className="text-terracotta-vibrant">начать</span>?
             </h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
               Создайте персональную дорожную карту и сделайте первый шаг к карьере мечты
