@@ -237,8 +237,8 @@ const Index = () => {
         
         <div className="container mx-auto relative">
           <div className="max-w-3xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage/10 border border-sage/20 text-sm mb-8">
-              <Zap className="w-4 h-4 text-sage" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/8 text-sm mb-8">
+              <Zap className="w-4 h-4 text-primary" />
               <span className="text-foreground">Начните сегодня — это бесплатно</span>
             </div>
             
