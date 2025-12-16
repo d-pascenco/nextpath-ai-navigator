@@ -114,7 +114,7 @@ const Index = () => {
       </section>
 
       {/* Capabilities list */}
-      <section className="py-16 px-6 border-t border-border/50 bg-gradient-to-b from-transparent to-secondary/30">
+      <section className="py-16 px-6 border-t border-border/50 bg-sand/40">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {capabilities.map((item, idx) => (
@@ -179,7 +179,7 @@ const Index = () => {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="py-24 px-6 bg-gradient-to-b from-secondary/30 via-secondary/50 to-secondary/30 relative">
+      <section id="how-it-works" className="py-24 px-6 bg-secondary/50 relative">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-2xl" />
           <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-sage/10 rounded-full blur-2xl" />
@@ -237,8 +237,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+      <section className="py-24 px-6 bg-sand/30 relative">
         
         <div className="container mx-auto relative">
           <div className="max-w-3xl mx-auto text-center">
