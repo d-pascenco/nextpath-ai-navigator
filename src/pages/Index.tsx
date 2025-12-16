@@ -39,9 +39,9 @@ const Index = () => {
     <div className="min-h-screen bg-background overflow-hidden">
       {/* Decorative background elements */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-20 right-[15%] w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-soft" />
-        <div className="absolute top-40 left-[10%] w-96 h-96 bg-sage/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-40 right-[20%] w-80 h-80 bg-golden/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '2s' }} />
+        <div className="absolute top-20 right-[15%] w-72 h-72 bg-primary/8 rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute top-40 left-[10%] w-96 h-96 bg-primary/6 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-40 right-[20%] w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '2s' }} />
       </div>
 
       {/* Navigation */}
@@ -116,7 +116,7 @@ const Index = () => {
       {/* Capabilities list */}
       <section className="py-16 px-6 border-t border-border/50">
         <div className="container mx-auto">
-          <div className="bg-sand/40 rounded-2xl p-8">
+          <div className="bg-primary/10 rounded-2xl p-8">
             <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
               {capabilities.map((item, idx) => (
                 <div 
@@ -184,7 +184,7 @@ const Index = () => {
       <section id="how-it-works" className="py-24 px-6">
         
         <div className="container mx-auto">
-          <div className="bg-sand/40 rounded-3xl p-10 md:p-16">
+          <div className="bg-primary/10 rounded-3xl p-10 md:p-16">
           <div className="max-w-2xl mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">
               Как это <span className="text-terracotta-vibrant">работает</span>
