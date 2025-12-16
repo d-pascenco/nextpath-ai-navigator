@@ -14,13 +14,13 @@ const features = [
     title: "Персональный маршрут",
     description: "Пошаговый план с курсами, практикой и реалистичными сроками",
     icon: TrendingUp,
-    color: "sage",
+    color: "terracotta",
   },
   {
     title: "Динамическая адаптация",
     description: "План корректируется по мере вашего прогресса и изменения приоритетов",
     icon: Zap,
-    color: "golden",
+    color: "terracotta",
   },
 ];
 
@@ -217,11 +217,7 @@ const Index = () => {
               },
             ].map((item, idx) => (
               <div key={idx} className="relative group">
-                <div className={`text-8xl font-serif leading-none mb-4 transition-all duration-300 ${
-                  item.accent === 'primary' ? 'text-primary/40 group-hover:text-primary/60' :
-                  item.accent === 'sage' ? 'text-sage/40 group-hover:text-sage/60' :
-                  'text-golden/40 group-hover:text-golden/60'
-                }`}>
+                <div className="text-8xl font-serif leading-none mb-4 transition-all duration-300 text-primary/40 group-hover:text-primary/60">
                   {item.step}
                 </div>
                 <h3 className="text-2xl font-serif text-foreground mb-3 group-hover:text-primary transition-colors">
