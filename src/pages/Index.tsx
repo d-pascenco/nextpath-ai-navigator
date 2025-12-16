@@ -181,13 +181,9 @@ const Index = () => {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="py-24 px-6 relative">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-2xl" />
-          <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-sage/10 rounded-full blur-2xl" />
-        </div>
+      <section id="how-it-works" className="py-24 px-6">
         
-        <div className="container mx-auto relative">
+        <div className="container mx-auto">
           <div className="bg-sand/40 rounded-3xl p-10 md:p-16">
           <div className="max-w-2xl mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">
