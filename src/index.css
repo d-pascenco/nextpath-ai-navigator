@@ -39,22 +39,31 @@
     /* Custom warm colors */
     --terracotta: 18 65% 55%;
     --terracotta-light: 18 50% 92%;
+    --terracotta-vibrant: 15 75% 50%;
     --sage: 155 35% 42%;
     --sage-light: 155 25% 92%;
+    --sage-vibrant: 155 50% 45%;
     --sand: 40 30% 85%;
     --cream: 40 30% 96%;
     --warm-brown: 30 25% 25%;
+    --golden: 42 85% 55%;
+    --coral: 8 75% 60%;
 
     /* Gradients */
     --gradient-warm: linear-gradient(180deg, hsl(35 30% 96%) 0%, hsl(40 25% 94%) 100%);
     --gradient-terracotta: linear-gradient(135deg, hsl(18 65% 55%), hsl(25 70% 50%));
     --gradient-sage: linear-gradient(135deg, hsl(155 35% 42%), hsl(160 40% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(18 75% 52%), hsl(42 85% 55%));
+    --gradient-accent: linear-gradient(135deg, hsl(155 50% 45%), hsl(18 65% 55%));
+    --gradient-glow: radial-gradient(circle at center, hsl(18 65% 55% / 0.15), transparent 70%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(30 10% 15% / 0.03);
     --shadow-md: 0 4px 6px -1px hsl(30 10% 15% / 0.05), 0 2px 4px -2px hsl(30 10% 15% / 0.03);
     --shadow-lg: 0 10px 20px -5px hsl(30 10% 15% / 0.08);
     --shadow-card: 0 2px 12px hsl(30 10% 15% / 0.04);
+    --shadow-glow: 0 0 40px hsl(18 65% 55% / 0.2);
+    --shadow-accent: 0 8px 30px hsl(18 65% 55% / 0.25);
 
     --sidebar-background: 40 25% 98%;
     --sidebar-foreground: 30 10% 25%;
@@ -141,13 +150,36 @@
   .gradient-sage {
     background: var(--gradient-sage);
   }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
   
   .shadow-card {
     box-shadow: var(--shadow-card);
   }
 
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .shadow-accent {
+    box-shadow: var(--shadow-accent);
+  }
+
   .text-gradient {
-    background: linear-gradient(135deg, hsl(18 65% 55%), hsl(155 35% 42%));
+    background: linear-gradient(135deg, hsl(18 65% 55%), hsl(42 85% 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(155 50% 45%), hsl(18 65% 55%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -155,6 +187,14 @@
 
   .animate-float {
     animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: float 6s ease-in-out 2s infinite;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 3s ease-in-out infinite;
   }
 
   .animate-fade-in {
@@ -168,6 +208,36 @@
   .animate-scale-in {
     animation: scaleIn 0.4s ease-out forwards;
   }
+
+  .animate-shimmer {
+    animation: shimmer 2.5s linear infinite;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .card-interactive {
+    @apply transition-all duration-300 hover:border-primary/30 hover:shadow-lg;
+  }
+
+  .card-interactive:hover {
+    transform: translateY(-2px);
+  }
 }
 
 @keyframes float {
@@ -176,6 +246,17 @@
   }
   50% {
     transform: translateY(-15px);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
   }
 }
 
@@ -207,6 +288,24 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
   }
 }
 

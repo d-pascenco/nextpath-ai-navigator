@@ -1,20 +1,26 @@
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/Logo";
-import { ArrowRight, Sparkles, ChevronRight } from "lucide-react";
+import { ArrowRight, Sparkles, ChevronRight, Zap, Target, TrendingUp } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const features = [
   {
     title: "Анализ навыков",
     description: "AI определяет ваши сильные стороны и точки роста на основе опыта и образования",
+    icon: Target,
+    color: "terracotta",
   },
   {
     title: "Персональный маршрут",
     description: "Пошаговый план с курсами, практикой и реалистичными сроками",
+    icon: TrendingUp,
+    color: "sage",
   },
   {
     title: "Динамическая адаптация",
     description: "План корректируется по мере вашего прогресса и изменения приоритетов",
+    icon: Zap,
+    color: "golden",
   },
 ];
 
@@ -30,20 +36,27 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="fixed inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-20 right-[15%] w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse-soft" />
+        <div className="absolute top-40 left-[10%] w-96 h-96 bg-sage/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '1s' }} />
+        <div className="absolute bottom-40 right-[20%] w-80 h-80 bg-golden/5 rounded-full blur-3xl animate-pulse-soft" style={{ animationDelay: '2s' }} />
+      </div>
+
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border/50">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Logo />
             <div className="hidden md:flex items-center gap-8">
-              <a href="#features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#features" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Возможности
               </a>
-              <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+              <a href="#how-it-works" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                 Как это работает
               </a>
-              <Button variant="outline" size="sm">
+              <Button variant="outline" size="sm" className="hover:border-primary hover:text-primary">
                 Войти
               </Button>
             </div>
@@ -52,17 +65,17 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-6">
+      <section className="pt-32 pb-20 px-6 relative">
         <div className="container mx-auto">
           <div className="max-w-3xl animate-slide-up">
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary text-secondary-foreground text-sm mb-8">
-              <Sparkles className="w-3.5 h-3.5 text-primary" />
-              AI-платформа для карьеры
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-sage/10 border border-primary/20 text-sm mb-8 animate-shimmer" style={{ backgroundSize: '200% 100%' }}>
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-foreground font-medium">AI-платформа для карьеры</span>
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-foreground leading-[1.1] mb-6">
               Найди свой<br />
-              <span className="text-primary">путь к мечте</span>
+              <span className="text-gradient">путь к мечте</span>
             </h1>
             
             <p className="text-lg md:text-xl text-muted-foreground max-w-xl mb-10 leading-relaxed">
@@ -75,29 +88,42 @@ const Index = () => {
                 variant="hero" 
                 size="xl" 
                 onClick={() => navigate("/onboarding")}
+                className="group shadow-accent hover:shadow-glow transition-all duration-300"
               >
                 Начать бесплатно
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button variant="ghost" size="xl" className="text-muted-foreground">
+              <Button variant="ghost" size="xl" className="text-muted-foreground hover:text-primary group">
                 Узнать больше
-                <ChevronRight className="w-4 h-4" />
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Button>
+            </div>
+          </div>
+
+          {/* Hero decorative shape */}
+          <div className="absolute right-0 top-32 hidden lg:block">
+            <div className="relative w-80 h-80">
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-sage/20 animate-float" />
+              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-golden/20 to-primary/10 animate-float-delayed" />
+              <div className="absolute inset-16 rounded-full bg-card border border-border/50 flex items-center justify-center">
+                <Sparkles className="w-12 h-12 text-primary/50" />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Capabilities list */}
-      <section className="py-16 px-6 border-t border-border/50">
+      <section className="py-16 px-6 border-t border-border/50 bg-gradient-to-b from-transparent to-secondary/30">
         <div className="container mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
             {capabilities.map((item, idx) => (
               <div 
                 key={idx} 
-                className="flex items-center gap-3 text-sm text-muted-foreground"
+                className="flex items-center gap-3 text-sm text-foreground/80 hover:text-primary transition-colors group"
+                style={{ animationDelay: `${idx * 100}ms` }}
               >
-                <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
+                <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-sage shrink-0 group-hover:scale-125 transition-transform" />
                 {item}
               </div>
             ))}
@@ -110,7 +136,7 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-2xl mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">
-              Всё для карьерного роста
+              Всё для <span className="text-gradient">карьерного роста</span>
             </h2>
             <p className="text-muted-foreground text-lg">
               NextPath использует AI для создания вашего уникального плана развития
@@ -118,32 +144,51 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
-            {features.map((feature, idx) => (
-              <div
-                key={idx}
-                className="p-8 rounded-2xl bg-card border border-border hover:border-primary/20 transition-colors duration-300"
-              >
-                <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-6">
-                  <span className="text-lg font-serif text-primary">0{idx + 1}</span>
+            {features.map((feature, idx) => {
+              const Icon = feature.icon;
+              const colorClasses = {
+                terracotta: "from-primary/20 to-primary/5 border-primary/20 hover:border-primary/40",
+                sage: "from-sage/20 to-sage/5 border-sage/20 hover:border-sage/40",
+                golden: "from-golden/20 to-golden/5 border-golden/20 hover:border-golden/40",
+              };
+              const iconBg = {
+                terracotta: "bg-primary/10 text-primary",
+                sage: "bg-sage/10 text-sage",
+                golden: "bg-golden/10 text-golden",
+              };
+              return (
+                <div
+                  key={idx}
+                  className={`p-8 rounded-2xl bg-gradient-to-b ${colorClasses[feature.color as keyof typeof colorClasses]} border card-interactive`}
+                  style={{ animationDelay: `${idx * 150}ms` }}
+                >
+                  <div className={`w-12 h-12 rounded-xl ${iconBg[feature.color as keyof typeof iconBg]} flex items-center justify-center mb-6`}>
+                    <Icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-serif text-foreground mb-3">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-serif text-foreground mb-3">
-                  {feature.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="py-24 px-6 bg-secondary/50">
-        <div className="container mx-auto">
+      <section id="how-it-works" className="py-24 px-6 bg-gradient-to-b from-secondary/30 via-secondary/50 to-secondary/30 relative">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-2xl" />
+          <div className="absolute -bottom-20 -right-20 w-60 h-60 bg-sage/10 rounded-full blur-2xl" />
+        </div>
+        
+        <div className="container mx-auto relative">
           <div className="max-w-2xl mb-16">
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-4">
-              Как это работает
+              Как это <span className="text-gradient-accent">работает</span>
             </h2>
             <p className="text-muted-foreground text-lg">
               Три простых шага к персональной дорожной карте
@@ -156,23 +201,30 @@ const Index = () => {
                 step: "01",
                 title: "Расскажите о себе",
                 description: "Заполните профиль: образование, опыт, навыки и карьерные цели",
+                accent: "primary",
               },
               {
                 step: "02",
                 title: "AI создаёт план",
                 description: "Алгоритм анализирует данные и строит оптимальный маршрут развития",
+                accent: "sage",
               },
               {
                 step: "03",
                 title: "Следуйте карте",
                 description: "Изучайте материалы, выполняйте задания и отслеживайте прогресс",
+                accent: "golden",
               },
             ].map((item, idx) => (
-              <div key={idx} className="relative">
-                <div className="text-8xl font-serif text-primary/10 leading-none mb-4">
+              <div key={idx} className="relative group">
+                <div className={`text-8xl font-serif leading-none mb-4 transition-all duration-300 ${
+                  item.accent === 'primary' ? 'text-primary/20 group-hover:text-primary/40' :
+                  item.accent === 'sage' ? 'text-sage/20 group-hover:text-sage/40' :
+                  'text-golden/20 group-hover:text-golden/40'
+                }`}>
                   {item.step}
                 </div>
-                <h3 className="text-2xl font-serif text-foreground mb-3">
+                <h3 className="text-2xl font-serif text-foreground mb-3 group-hover:text-primary transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-muted-foreground leading-relaxed">
@@ -185,11 +237,18 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-6">
-        <div className="container mx-auto">
+      <section className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
+        
+        <div className="container mx-auto relative">
           <div className="max-w-3xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-sage/10 border border-sage/20 text-sm mb-8">
+              <Zap className="w-4 h-4 text-sage" />
+              <span className="text-foreground">Начните сегодня — это бесплатно</span>
+            </div>
+            
             <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6">
-              Готовы начать?
+              Готовы <span className="text-gradient">начать</span>?
             </h2>
             <p className="text-muted-foreground text-lg mb-10 max-w-xl mx-auto">
               Создайте персональную дорожную карту и сделайте первый шаг к карьере мечты
@@ -198,21 +257,22 @@ const Index = () => {
               variant="hero" 
               size="xl"
               onClick={() => navigate("/onboarding")}
+              className="group shadow-accent hover:shadow-glow transition-all duration-300"
             >
               Создать дорожную карту
-              <ArrowRight className="w-4 h-4" />
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-10 px-6 border-t border-border">
+      <footer className="py-10 px-6 border-t border-border bg-secondary/20">
         <div className="container mx-auto">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <Logo size="sm" />
             <p className="text-sm text-muted-foreground">
-              © 2024 NextPath. Всегда есть другой путь.
+              © 2024 NextPath. <span className="text-primary/80">Всегда есть другой путь.</span>
             </p>
           </div>
         </div>
