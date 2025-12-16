@@ -68,7 +68,7 @@ const Index = () => {
       <section className="pt-32 pb-20 px-6 relative">
         <div className="container mx-auto">
           <div className="max-w-3xl animate-slide-up">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-sage/10 border border-primary/20 text-sm mb-8 animate-shimmer" style={{ backgroundSize: '200% 100%' }}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary/5 border border-primary/20 text-sm mb-8 animate-shimmer" style={{ backgroundSize: '200% 100%' }}>
               <Sparkles className="w-4 h-4 text-primary" />
               <span className="text-foreground font-medium">AI-платформа для карьеры</span>
             </div>
@@ -103,8 +103,8 @@ const Index = () => {
           {/* Hero decorative shape */}
           <div className="absolute right-0 top-32 hidden lg:block">
             <div className="relative w-80 h-80">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-sage/20 animate-float" />
-              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-golden/20 to-primary/10 animate-float-delayed" />
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 animate-float" />
+              <div className="absolute inset-8 rounded-full bg-gradient-to-br from-primary/15 to-primary/8 animate-float-delayed" />
               <div className="absolute inset-16 rounded-full bg-card border border-border/50 flex items-center justify-center">
                 <Sparkles className="w-12 h-12 text-primary/50" />
               </div>
@@ -124,7 +124,7 @@ const Index = () => {
                   className="flex items-center gap-3 text-sm text-foreground/80 hover:text-primary transition-colors group"
                   style={{ animationDelay: `${idx * 100}ms` }}
                 >
-                  <div className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-sage shrink-0 group-hover:scale-125 transition-transform" />
+                  <div className="w-2 h-2 rounded-full bg-primary shrink-0 group-hover:scale-125 transition-transform" />
                   {item}
                 </div>
               ))}
